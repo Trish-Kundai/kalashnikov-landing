@@ -1,32 +1,217 @@
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Georgia', serif; color: white; }
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+body {
+    font-family: 'Georgia', serif;
+    color: #ffffff;
+    background-color: #000000;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden; /* Prevents unwanted scrolling */
+}
+
+/* Hero Section: The foundation of your page */
 .hero {
     height: 100vh;
-    background: url('background.jpg') center/cover no-repeat;
+    width: 100vw;
+    /* The 0.85 opacity makes the image very dark so text pops */
+    background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), 
+                url('background.jpg') center/cover no-repeat;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    position: relative;
 }
 
-.overlay {
-    position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.6); /* Darkens the image */
+/* Centralized content block */
+.content {
+    max-width: 800px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Space between elements */
 }
 
-.content { position: relative; z-index: 1; padding: 20px; }
+/* KALASHNIKOV Logo */
+.logo {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    color: #ffffff;
+}
 
-header { position: absolute; top: 20px; z-index: 2; font-size: 24px; font-weight: bold; }
+/* Threads of Extinction Title */
+h1 {
+    font-size: 2.8rem;
+    color: #d4af37; /* Luxury Gold */
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin-top: 10px;
+}
 
-h1 { font-size: 3rem; margin-bottom: 20px; color: #d4af37; /* Luxury Gold */ }
+/* Sub-text paragraph */
+p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 500px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #cccccc;
+}
 
-p { font-size: 1rem; line-height: 1.6; margin-bottom: 30px; }
-
+/* Search Input */
 input {
-    padding: 15px; width: 300px; border: none;
-    background: rgba(255, 255, 255, 0.1); color: white; border: 1px solid white;
+    margin-top: 20px;
+    padding: 18px 30px;
+    width: 100%;
+    max-width: 350px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    text-align: center;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+/* Navigation Bar */
+.navbar {
+    position: absolute;
+    top: 0; width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.menu-icon { font-size: 1.5rem; cursor: pointer; color: #d4af37; }
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-family: sans-serif;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+/* Fixed Chat Button */
+.chat-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #d4af37; /* Luxury Gold */
+    color: black;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    z-index: 100;
+    transition: transform 0.3s;
+}
+
+.chat-btn:hover { transform: scale(1.1); }
+input:focus {
+    outline: none;
+    border: 1px solid #d4af37;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Dropdown Menu Overlay */
+.dropdown {
+    height: 100vh; width: 100%; position: fixed; top: 0; left: 0;
+    background: rgba(0, 0, 0, 0.95);
+    display: none; /* Hidden by default */
+    flex-direction: column; justify-content: center; align-items: center;
+    z-index: 1000;
+}
+
+.dropdown a {
+    color: #d4af37; font-size: 2rem; text-decoration: none;
+    margin: 20px 0; font-family: 'Georgia', serif;
+}
+
+.close-btn {
+    position: absolute; top: 30px; right: 40px; font-size: 3rem; color: white; cursor: pointer;
+}
+
+.category-hero {
+    padding-top: 100px;
+    text-align: center;
+    color: white;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px;
+}
+
+.product-card {
+    height: 350px;
+    background: #222;
+    border: 1px solid #444;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #888;
+}
+
+.about-page {
+    background: #000;
+    color: white;
+    font-family: 'Georgia', serif;
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 100px auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.about-container h1 {
+    font-size: 3rem;
+    color: #d4af37;
+    margin-bottom: 30px;
+}
+
+.about-container {
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 20px;
+    
+    /* These three lines force everything inside to be centered */
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    
+    text-align: center;
+}
+
+
+.contact-info {
+    border-top: 1px solid #d4af37;
+    padding-top: 30px;
+}
+
+.contact-info h2 {
+    color: #d4af37;
+    margin-bottom: 20px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .logo { font-size: 2.2rem; }
+    h1 { font-size: 1.8rem; }
+    p { font-size: 0.9rem; }
 }
