@@ -1,83 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Men's Wear | KALASHNIKOV</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body class="category-page">
-        <header class="topbar topbar-secondary">
-            <button class="icon-btn menu-toggle" aria-label="Open menu" onclick="toggleMenu()">☰</button>
-            <div class="brand-mark compact">KALASHNIKOV</div>
-            <button class="icon-btn cart-button" aria-label="Cart" onclick="toggleCart()">🛍️<span class="cart-count" id="cart-count">0</span></button>
-        </header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's Wear | KALASHNIKOV</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="category-page">
+    <header class="topbar topbar-secondary">
+        <button class="icon-btn menu-toggle" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+        <div class="brand-mark compact">KALASHNIKOV</div>
+        <button class="icon-btn cart-button" aria-label="Cart" onclick="toggleCart()">🛍️<span class="cart-count" id="cart-count">0</span></button>
+    </header>
 
-        <div id="dropdown-menu" class="dropdown">
-            <button class="close-btn" aria-label="Close menu" onclick="toggleMenu()">×</button>
-            <nav class="dropdown-links">
-                <a href="index.html">Home</a>
-                <a href="womens.html">Women's Wear</a>
-                <a href="accessories.html">Accessories</a>
-                <a href="about.html">About Us</a>
-                <a class="chat-link" href="https://wa.me/263718489403" target="_blank">Chat with us</a>
-            </nav>
+    <div id="dropdown-menu" class="dropdown">
+        <button class="close-btn" aria-label="Close menu" onclick="toggleMenu()">×</button>
+        <nav class="dropdown-links">
+            <a href="index.html">Home</a>
+            <a href="womens.html">Women's Wear</a>
+            <a href="accessories.html">Accessories</a>
+            <a href="about.html">About Us</a>
+            <a class="chat-link" href="https://wa.me/263718489403" target="_blank">Chat with us</a>
+        </nav>
+    </div>
+
+    <div id="cart-overlay" class="cart-overlay">
+        <div class="cart-panel">
+            <button class="close-btn" aria-label="Close cart" onclick="toggleCart()">×</button>
+            <h2>Your Cart</h2>
+            <div id="cart-items" class="cart-items">
+                <p class="empty-cart">Your cart is empty.</p>
+            </div>
+            <div class="cart-total" id="cart-total">Total items: 0</div>
+            <button class="checkout-btn" type="button" onclick="checkoutCart()">Checkout</button>
+        </div>
+    </div>
+
+    <main class="category-hero category-mens">
+        <div class="category-copy">
+            <span class="eyebrow">Men's Capsule</span>
+            <h1>Signature silhouettes for the modern sovereign</h1>
+            <p>Discover tailored pieces, premium streetwear and elevated essentials designed to command attention.</p>
+            <form class="search-panel" action="#" role="search">
+                <span>🔍</span>
+                <input type="search" placeholder="Find your threads" aria-label="Search products">
+            </form>
         </div>
 
-        <div id="cart-overlay" class="cart-overlay">
-            <div class="cart-panel">
-                <button class="close-btn" aria-label="Close cart" onclick="toggleCart()">×</button>
-                <h2>Your Cart</h2>
-                <div id="cart-items" class="cart-items">
-                    <p class="empty-cart">Your cart is empty.</p>
+        <div class="product-grid">
+            <article class="product-card">
+                <img src="images/imperial tee.jpeg" alt="Imperial Tee">
+                <div class="product-detail">
+                    <span>Imperial Tee</span>
+                    <span class="product-price">$95</span>
                 </div>
-                <div class="cart-total" id="cart-total">Total items: 0</div>
-                <button class="checkout-btn" type="button" onclick="checkoutCart()">Checkout</button>
-            </div>
+                <button class="add-to-cart" data-product="Imperial Tee" data-price="95" type="button">Add to cart</button>
+            </article>
+            <article class="product-card">
+                <img src="images/sovereign jacket.webp" alt="Sovereign Jacket">
+                <div class="product-detail">
+                    <span>Sovereign Jacket</span>
+                    <span class="product-price">$250</span>
+                </div>
+                <button class="add-to-cart" data-product="Sovereign Jacket" data-price="250" type="button">Add to cart</button>
+            </article>
+            <article class="product-card">
+                <img src="images/monach denim.webp" alt="Monarch Denim">
+                <div class="product-detail">
+                    <span>Monarch Denim</span>
+                    <span class="product-price">$135</span>
+                </div>
+                <button class="add-to-cart" data-product="Monarch Denim" data-price="135" type="button">Add to cart</button>
+            </article>
         </div>
+    </main>
 
-        <main class="category-hero category-mens">
-            <div class="category-copy">
-                <span class="eyebrow">Men's Capsule</span>
-                <h1>Signature silhouettes for the modern sovereign</h1>
-                <p>Discover tailored pieces, premium streetwear and elevated essentials designed to command attention.</p>
-                <form class="search-panel" action="#" role="search">
-                    <span>🔍</span>
-                    <input type="search" placeholder="Find your threads" aria-label="Search products">
-                </form>
-            </div>
-
-            <div class="product-grid">
-                <article class="product-card">
-                    <img src="images/imperial tee.jpeg" alt="Imperial Tee">
-                    <div class="product-detail">
-                        <span>Imperial Tee</span>
-                        <span class="product-price">$95</span>
-                    </div>
-                    <button class="add-to-cart" data-product="Imperial Tee" data-price="95" type="button">Add to cart</button>
-                </article>
-                <article class="product-card">
-                    <img src="images/sovereign jacket.webp" alt="Sovereign Jacket">
-                    <div class="product-detail">
-                        <span>Sovereign Jacket</span>
-                        <span class="product-price">$250</span>
-                    </div>
-                    <button class="add-to-cart" data-product="Sovereign Jacket" data-price="250" type="button">Add to cart</button>
-                </article>
-                <article class="product-card">
-                    <img src="images/monach denim.webp" alt="Monarch Denim">
-                    <div class="product-detail">
-                        <span>Monarch Denim</span>
-                        <span class="product-price">$135</span>
-                    </div>
-                    <button class="add-to-cart" data-product="Monarch Denim" data-price="135" type="button">Add to cart</button>
-                </article>
-            </div>
-        </main>
-
-        <script src="script.js"></script>
-    </body>
-    </html>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,83 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Accessories | KALASHNIKOV</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body class="category-page">
-        <header class="topbar topbar-secondary">
-            <button class="icon-btn menu-toggle" aria-label="Open menu" onclick="toggleMenu()">☰</button>
-            <div class="brand-mark compact">KALASHNIKOV</div>
-            <button class="icon-btn cart-button" aria-label="Cart" onclick="toggleCart()">🛍️<span class="cart-count" id="cart-count">0</span></button>
-        </header>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessories | KALASHNIKOV</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="category-page">
+    <header class="topbar topbar-secondary">
+        <button class="icon-btn menu-toggle" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+        <div class="brand-mark compact">KALASHNIKOV</div>
+        <button class="icon-btn cart-button" aria-label="Cart" onclick="toggleCart()">🛍️<span class="cart-count" id="cart-count">0</span></button>
+    </header>
 
-        <div id="dropdown-menu" class="dropdown">
-            <button class="close-btn" aria-label="Close menu" onclick="toggleMenu()">×</button>
-            <nav class="dropdown-links">
-                <a href="index.html">Home</a>
-                <a href="mens.html">Men's Wear</a>
-                <a href="womens.html">Women's Wear</a>
-                <a href="about.html">About Us</a>
-                <a class="chat-link" href="https://wa.me/263718489403" target="_blank">Chat with us</a>
-            </nav>
+    <div id="dropdown-menu" class="dropdown">
+        <button class="close-btn" aria-label="Close menu" onclick="toggleMenu()">×</button>
+        <nav class="dropdown-links">
+            <a href="index.html">Home</a>
+            <a href="mens.html">Men's Wear</a>
+            <a href="womens.html">Women's Wear</a>
+            <a href="about.html">About Us</a>
+            <a class="chat-link" href="https://wa.me/263718489403" target="_blank">Chat with us</a>
+        </nav>
+    </div>
+
+    <div id="cart-overlay" class="cart-overlay">
+        <div class="cart-panel">
+            <button class="close-btn" aria-label="Close cart" onclick="toggleCart()">×</button>
+            <h2>Your Cart</h2>
+            <div id="cart-items" class="cart-items">
+                <p class="empty-cart">Your cart is empty.</p>
+            </div>
+            <div class="cart-total" id="cart-total">Total items: 0</div>
+            <button class="checkout-btn" type="button" onclick="checkoutCart()">Checkout</button>
+        </div>
+    </div>
+
+    <main class="category-hero category-accessories">
+        <div class="category-copy">
+            <span class="eyebrow">Accessories</span>
+            <h1>Refined details for the modern legacy</h1>
+            <p>Complete your look with sculptural accessories crafted from premium materials and bold shapes.</p>
+            <form class="search-panel" action="#" role="search">
+                <span>🔍</span>
+                <input type="search" placeholder="Find your threads" aria-label="Search products">
+            </form>
         </div>
 
-        <div id="cart-overlay" class="cart-overlay">
-            <div class="cart-panel">
-                <button class="close-btn" aria-label="Close cart" onclick="toggleCart()">×</button>
-                <h2>Your Cart</h2>
-                <div id="cart-items" class="cart-items">
-                    <p class="empty-cart">Your cart is empty.</p>
+        <div class="product-grid">
+            <article class="product-card">
+                <img src="images/legacy belt.webp" alt="Legacy Belt">
+                <div class="product-detail">
+                    <span>Legacy Belt</span>
+                    <span class="product-price">$80</span>
                 </div>
-                <div class="cart-total" id="cart-total">Total items: 0</div>
-                <button class="checkout-btn" type="button" onclick="checkoutCart()">Checkout</button>
-            </div>
+                <button class="add-to-cart" data-product="Legacy Belt" data-price="80" type="button">Add to cart</button>
+            </article>
+            <article class="product-card">
+                <img src="images/regal bag.webp" alt="Regal Bag">
+                <div class="product-detail">
+                    <span>Regal Bag</span>
+                    <span class="product-price">$215</span>
+                </div>
+                <button class="add-to-cart" data-product="Regal Bag" data-price="215" type="button">Add to cart</button>
+            </article>
+            <article class="product-card">
+                <img src="images/signature chain.webp" alt="Signature Chain">
+                <div class="product-detail">
+                    <span>Signature Chain</span>
+                    <span class="product-price">$115</span>
+                </div>
+                <button class="add-to-cart" data-product="Signature Chain" data-price="115" type="button">Add to cart</button>
+            </article>
         </div>
+    </main>
 
-        <main class="category-hero category-accessories">
-            <div class="category-copy">
-                <span class="eyebrow">Accessories</span>
-                <h1>Refined details for the modern legacy</h1>
-                <p>Complete your look with sculptural accessories crafted from premium materials and bold shapes.</p>
-                <form class="search-panel" action="#" role="search">
-                    <span>🔍</span>
-                    <input type="search" placeholder="Find your threads" aria-label="Search products">
-                </form>
-            </div>
-
-            <div class="product-grid">
-                <article class="product-card">
-                    <img src="images/legacy belt.webp" alt="Legacy Belt">
-                    <div class="product-detail">
-                        <span>Legacy Belt</span>
-                        <span class="product-price">$80</span>
-                    </div>
-                    <button class="add-to-cart" data-product="Legacy Belt" data-price="80" type="button">Add to cart</button>
-                </article>
-                <article class="product-card">
-                    <img src="images/regal bag.webp" alt="Regal Bag">
-                    <div class="product-detail">
-                        <span>Regal Bag</span>
-                        <span class="product-price">$215</span>
-                    </div>
-                    <button class="add-to-cart" data-product="Regal Bag" data-price="215" type="button">Add to cart</button>
-                </article>
-                <article class="product-card">
-                    <img src="images/signature chain.webp" alt="Signature Chain">
-                    <div class="product-detail">
-                        <span>Signature Chain</span>
-                        <span class="product-price">$115</span>
-                    </div>
-                    <button class="add-to-cart" data-product="Signature Chain" data-price="115" type="button">Add to cart</button>
-                </article>
-            </div>
-        </main>
-
-        <script src="script.js"></script>
-    </body>
-    </html>
+    <script src="script.js"></script>
+</body>
+</html>
