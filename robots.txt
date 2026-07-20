@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://trish-kundai.github.io/kalashnikov-landing/sitemap.xml
