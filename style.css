@@ -647,14 +647,15 @@ button:focus {
   }
 
   .category-hero {
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 16px;
+    display: block;
+    min-height: auto;
+    padding: 24px 16px 32px;
   }
 
   .category-copy {
     width: 100%;
-    margin-bottom: 8px;
+    margin-bottom: 20px;
+    text-align: left;
   }
 
   .hero-panel {
@@ -674,14 +675,10 @@ button:focus {
   }
 
   .product-grid {
-    padding: 8px 0 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    overflow-x: visible;
-    overflow-y: visible;
-    scroll-snap-type: none;
-    scrollbar-width: none;
+    padding: 0 0 24px;
+    display: block;
+    width: 100%;
+    overflow: visible;
   }
 
   .product-grid::-webkit-scrollbar {
@@ -702,6 +699,7 @@ button:focus {
     width: 100%;
     flex: 0 0 auto;
     border-radius: 24px;
+    margin-bottom: 14px;
   }
 
   .product-card img {
