@@ -646,6 +646,17 @@ button:focus {
     align-items: flex-start;
   }
 
+  .category-hero {
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 16px;
+  }
+
+  .category-copy {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+
   .hero-panel {
     width: 100%;
     padding: 24px 20px;
@@ -663,14 +674,18 @@ button:focus {
   }
 
   .product-grid {
-    padding: 16px 0 24px;
+    padding: 8px 0 24px;
     display: flex;
+    flex-direction: column;
     gap: 14px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-    scrollbar-color: rgba(212, 175, 55, 0.6) transparent;
+    overflow-x: visible;
+    overflow-y: visible;
+    scroll-snap-type: none;
+    scrollbar-width: none;
+  }
+
+  .product-grid::-webkit-scrollbar {
+    display: none;
   }
 
   .product-grid::-webkit-scrollbar {
@@ -684,9 +699,8 @@ button:focus {
 
   .product-card {
     min-height: auto;
-    min-width: 82vw;
-    flex: 0 0 82vw;
-    scroll-snap-align: start;
+    width: 100%;
+    flex: 0 0 auto;
     border-radius: 24px;
   }
 
