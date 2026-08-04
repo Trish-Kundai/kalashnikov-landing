@@ -63,7 +63,7 @@ button,
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 18px;
+  gap: 16px;
   margin-left: auto;
   margin-right: 12px;
   flex-wrap: wrap;
@@ -152,6 +152,12 @@ button.add-to-cart {
   color: #d4af17;
   background: rgba(212, 175, 55, 0.12);
   border-color: rgba(212, 175, 55, 0.3);
+}
+
+.cart-button svg {
+  width: 18px;
+  height: 18px;
+  display: block;
 }
 
 .cart-count {
@@ -606,7 +612,16 @@ button:focus {
   }
 
   .header-nav {
-    display: none;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: 8px 0 0;
+    order: 3;
+  }
+
+  .header-nav a {
+    font-size: 0.72rem;
+    letter-spacing: 1px;
   }
 
   .topbar,
