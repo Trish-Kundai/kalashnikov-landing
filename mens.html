@@ -8,9 +8,24 @@
 </head>
 <body class="category-page">
     <header class="topbar topbar-secondary">
-        <button class="icon-btn menu-toggle" aria-label="Open menu" onclick="toggleMenu()">☰</button>
-        <div class="brand-mark compact">KALASHNIKOV</div>
-        <button class="icon-btn cart-button" aria-label="Cart" onclick="toggleCart()">🛍️<span class="cart-count" id="cart-count">0</span></button>
+        <div class="brand-group">
+            <button class="icon-btn menu-toggle" aria-label="Open menu" onclick="toggleMenu()">☰</button>
+            <a class="brand-mark compact" href="index.html" aria-label="Go to homepage">
+                <span class="brand-logo">KALASHNIKOV</span>
+            </a>
+        </div>
+
+        <nav class="header-nav" aria-label="Primary">
+            <a href="index.html">Home</a>
+            <a href="mens.html">Men's Wear</a>
+            <a href="womens.html">Women's Wear</a>
+            <a href="accessories.html">Accessories</a>
+            <a href="about.html">About</a>
+        </nav>
+
+        <div class="topbar-actions">
+            <button class="icon-btn cart-button" aria-label="Cart" onclick="toggleCart()">🛍️<span class="cart-count" id="cart-count">0</span></button>
+        </div>
     </header>
 
     <div id="dropdown-menu" class="dropdown">
