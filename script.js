@@ -87,7 +87,87 @@ function setupCartButtons() {
     });
 }
 
+function updateSearchStatus(form, message) {
+    let status = form.querySelector('.search-status');
+    if (!status) {
+        status = document.createElement('div');
+        status.className = 'search-status';
+        form.appendChild(status);
+    }
+    status.textContent = message;
+}
+
+function handleSearchSubmit(event) {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const input = form.querySelector('input[type="search"]');
+    const query = input.value.trim().toLowerCase();
+    const productCards = Array.from(document.querySelectorAll('.product-card'));
+
+    if (productCards.length > 0) {
+        if (!query) {
+            productCards.forEach(card => {
+                card.style.display = 'flex';
+            });
+            updateSearchStatus(form, 'Showing all products.');
+            return;
+        }
+
+        const matches = productCards.filter(card => {
+            const detailText = card.querySelector('.product-detail')?.textContent.toLowerCase() || '';
+            const altText = card.querySelector('img')?.alt.toLowerCase() || '';
+            return detailText.includes(query) || altText.includes(query);
+        });
+
+        productCards.forEach(card => {
+            card.style.display = matches.includes(card) ? 'flex' : 'none';
+        });
+
+        if (matches.length === 0) {
+            updateSearchStatus(form, `No products found for "${input.value.trim()}".`);
+        } else {
+            updateSearchStatus(form, `${matches.length} product(s) found for "${input.value.trim()}".`);
+        }
+        return;
+    }
+
+    if (!query) {
+        updateSearchStatus(form, 'Enter a keyword like mens, womens, or accessories.');
+        return;
+    }
+
+    if (/\b(men|mens|male|man|shirt|jacket|denim|tee|t-shirt)\b/.test(query)) {
+        window.location.href = 'mens.html';
+        return;
+    }
+
+    if (/\b(women|womens|female|woman|dress|coat|pants|knit|skirt)\b/.test(query)) {
+        window.location.href = 'womens.html';
+        return;
+    }
+
+    if (/\b(accessories|accessory|belt|bag|chain|jewel|ring|earring|necklace)\b/.test(query)) {
+        window.location.href = 'accessories.html';
+        return;
+    }
+
+    if (/\b(about|contact|info)\b/.test(query)) {
+        window.location.href = 'about.html';
+        return;
+    }
+
+    updateSearchStatus(form, 'Try searching for mens, womens, or accessories.');
+}
+
+function setupSearchPanels() {
+    const forms = document.querySelectorAll('.search-panel');
+    forms.forEach(form => {
+        form.addEventListener('submit', handleSearchSubmit);
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     setupCartButtons();
+    setupSearchPanels();
     updateCartUI();
 });
